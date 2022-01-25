@@ -15,7 +15,12 @@ A streamlit based webapp to perform SOTA instance segmentation on images, videos
  
 
 # Videos
-
+| **Original Video**  | **Segmented Video**  |
+|---------------------|-----------------------|
+| ![pic1](gifs/2.gif)  | ![pic1](gifs/2.gif)  |
+| ![pic2](gifs/2.gif)  | ![pic2](gifs/2.gif)  |
+| ![pic3](gifs/2.gif)  | ![pic3](gifs/2.gif)  |
+| ![pic6](gifs/2.gif) | ![pic6](gifs/2.gif)  |
 
 # Live Webcam Feed
 ***coming soon...***
