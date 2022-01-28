@@ -1,9 +1,9 @@
 # ✨ Instance Segmentation using PixelLib 🙆‍♂️ [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![](https://img.shields.io/badge/Prateek-Ralhan-brightgreen.svg?colorB=ff0000)](https://prateekralhan.github.io/)
 A streamlit based webapp to perform "State of the Art" instance segmentation on images, videos and live webcam feed using Pixellib.
 
-![image](https://user-images.githubusercontent.com/29462447/151628929-fbf86de5-dcc4-401a-903b-c4ddaf50b0e6.gif)
+![image](gifs/image.gif)
 
-
+![video](gifs/video.gif)
 
 ## Installation:
 * Simply run the command ***pip install -r requirements.txt*** to install the necessary dependencies.
@@ -43,10 +43,10 @@ streamlit run app.py --server.maxUploadSize=1028
 
 # Live Webcam Feed
 
-![live_feed1](https://user-images.githubusercontent.com/29462447/151629804-0ec654fc-b954-40ed-b0a0-86c9a225f03d.png)
+![live_feed1](gifs/live_feed1.png)
 
 
-![livefeed2](https://user-images.githubusercontent.com/29462447/151629810-3af79b3b-da15-431f-a57f-2d210d22f15b.png)
+![livefeed2](gifs/livefeed2.png)
 
 
 ### Running the Dockerized App
