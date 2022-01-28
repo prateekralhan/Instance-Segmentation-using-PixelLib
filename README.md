@@ -42,7 +42,12 @@ streamlit run app.py --server.maxUploadSize=1028
 | ![pic3](gifs/3.gif)  | ![pic3](gifs/segmented_3.gif)  |
 
 # Live Webcam Feed
-***coming soon...***
+
+![live_feed1](https://user-images.githubusercontent.com/29462447/151629804-0ec654fc-b954-40ed-b0a0-86c9a225f03d.png)
+
+
+![livefeed2](https://user-images.githubusercontent.com/29462447/151629810-3af79b3b-da15-431f-a57f-2d210d22f15b.png)
+
 
 ### Running the Dockerized App
 1. Ensure you have Docker Installed and Setup in your OS (Windows/Mac/Linux). For detailed Instructions, please refer [this.](https://docs.docker.com/engine/install/)
