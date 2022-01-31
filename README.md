@@ -3,8 +3,6 @@ A streamlit based webapp to perform "State of the Art" instance segmentation on 
 
 ![image](gifs/image.gif)
 
-![video](gifs/video.gif)
-
 ## Installation:
 * Simply run the command ***pip install -r requirements.txt*** to install the necessary dependencies.
 * In case you need to use your GPU for computation, ensure that you have the right CUDA drivers and CUDNN installed.
