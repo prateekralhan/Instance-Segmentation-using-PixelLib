@@ -23,16 +23,16 @@ segmentation_type = st.sidebar.selectbox('Select segmentation type 🎯',["Image
 st.sidebar.image(bottom_image,use_column_width='auto')
 
 st.image(main_image,use_column_width='auto')
-st.title("🖼📷 Instance Segmentator 🏡🏙")
+st.title("Instance Segmentator")
 
 if segmentation_type == "Image":
-    st.info('✨ Supports all popular image formats 📷 - PNG, JPG, BMP 😉')
+    st.info('Supports all popular image formats 📷 - PNG, JPG, BMP ')
     uploaded_file = st.file_uploader("Upload Image 🖼", type=["png","jpg","bmp","jpeg"])
 
     if uploaded_file is not None:
         with open(os.path.join(upload_path,uploaded_file.name),"wb") as f:
             f.write((uploaded_file).getbuffer())
-        with st.spinner(f"Working... 💫"):
+        with st.spinner(f"Working... "):
             uploaded_image = os.path.abspath(os.path.join(upload_path,uploaded_file.name))
             downloaded_image = os.path.abspath(os.path.join(download_path,str("segmented_"+uploaded_file.name)))
             segment_image(uploaded_image, downloaded_image)
@@ -40,7 +40,7 @@ if segmentation_type == "Image":
             final_image = Image.open(downloaded_image)
             print("Opening ",final_image)
             st.markdown("---")
-            st.image(final_image, caption='This is how your final image looks like 😉')
+            st.image(final_image, caption='This is how your final image looks like ')
             with open(downloaded_image, "rb") as file:
                 if uploaded_file.name.endswith('.jpg') or uploaded_file.name.endswith('.JPG'):
                     if st.download_button(
@@ -78,15 +78,15 @@ if segmentation_type == "Image":
                                          ):
                         download_success()
     else:
-        st.warning('⚠ Please upload your Image file 😯')
+        st.warning(' Please upload your Image file ')
 
 if segmentation_type == "Video":
-    st.info('✨ Supports all popular video formats 🎥 - MP4, MOV, MKV, AVI 😉')
+    st.info('Supports all popular video formats 🎥 - MP4, MOV, MKV, AVI ')
     uploaded_file = st.file_uploader("Upload Video 📽", type=["mp4","avi","mov","mkv"])
     if uploaded_file is not None:
         with open(os.path.join(upload_path,uploaded_file.name),"wb") as f:
             f.write((uploaded_file).getbuffer())
-        with st.spinner(f"Working... 💫"):
+        with st.spinner(f"Working... "):
             uploaded_video = os.path.abspath(os.path.join(upload_path,uploaded_file.name))
             downloaded_video = os.path.abspath(os.path.join(download_path,str("segmented_"+uploaded_file.name)))
             segment_video(uploaded_video, downloaded_video)
@@ -97,7 +97,7 @@ if segmentation_type == "Video":
             st.markdown("---")
             with open(downloaded_video, "rb") as file:
                 if uploaded_file.name.endswith('.avi') or uploaded_file.name.endswith('.AVI'):
-                    st.success('✅ Your results are ready !! 😲')
+                    st.success('Your results are ready !! ')
                     if st.download_button(
                                             label="Download Segmented Video 📽",
                                             data=file,
@@ -107,7 +107,7 @@ if segmentation_type == "Video":
                         download_success()
 
                 if uploaded_file.name.endswith('.mp4') or uploaded_file.name.endswith('.MP4'):
-                    st.success('✅ Your results are ready !! 😲')
+                    st.success('Your results are ready !! ')
                     if st.download_button(
                                             label="Download Segmented Video 📽",
                                             data=file,
@@ -117,7 +117,7 @@ if segmentation_type == "Video":
                         download_success()
 
                 if uploaded_file.name.endswith('.mov') or uploaded_file.name.endswith('.MOV'):
-                    st.success('✅ Your results are ready !! 😲')
+                    st.success('Your results are ready !! ')
                     if st.download_button(
                                             label="Download Segmented Video 📽",
                                             data=file,
@@ -127,7 +127,7 @@ if segmentation_type == "Video":
                         download_success()
 
                 if uploaded_file.name.endswith('.mkv') or uploaded_file.name.endswith('.MKV'):
-                    st.success('✅ Your results are ready !! 😲')
+                    st.success(' Your results are ready !! ')
                     if st.download_button(
                                             label="Download Segmented Video 📽",
                                             data=file,
@@ -136,22 +136,5 @@ if segmentation_type == "Video":
                                          ):
                         download_success()
     else:
-        st.warning('⚠ Please upload your Video file 😯')
+        st.warning('⚠ Please upload your Video file ')
 
-
-if segmentation_type == "Live Feed":
-    st.info('✨ The Live Feed from Web-Camera will take some time to load up 🎦')
-    live_feed = st.checkbox('Start Web-Camera ✅')
-    FRAME_WINDOW = st.image([])
-    camera = cv2.VideoCapture(0)
-
-    if live_feed:
-        _, frame = camera.read()
-        frame = segment_live_feed(frame)
-        FRAME_WINDOW.image(frame)
-    else:
-        camera.release()
-        cv2.destroyAllWindows()
-        st.warning('⚠ The Web-Camera is currently disabled. 😯')
-
-st.markdown("<br><hr><center>Made with ❤️ by <a href='mailto:ralhanprateek@gmail.com?subject=Instance Segmentator WebApp!&body=Please specify the issue you are facing with the app.'><strong>Prateek Ralhan</strong></a></center><hr>", unsafe_allow_html=True)
